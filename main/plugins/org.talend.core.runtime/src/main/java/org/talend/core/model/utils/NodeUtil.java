@@ -813,7 +813,8 @@ public class NodeUtil {
         List<IElementParameter> reps = new ArrayList<IElementParameter>();
         // should ignore Parallelize?
         List<String> ignorePs = Arrays.asList("CONNECTION_FORMAT", "INFORMATION", "COMMENT", "VALIDATION_RULES", "LABEL", "HINT",
-                "ACTIVATE", "TSTATCATCHER_STATS", "PARALLELIZE", "PROPERTY", "SQLPATTERN_VALUE");
+                "ACTIVATE", "TSTATCATCHER_STATS", "PARALLELIZE", "PROPERTY", "SQLPATTERN_VALUE", "ROWS_BUFFER_SIZE",
+                "TEMPORARY_DATA_DIRECTORY");
         // Exclude SQLPATTERN_VALUE.
         for (IElementParameter ep : eps) {
             if (ep.isShow(eps)) {
