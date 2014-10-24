@@ -934,6 +934,9 @@ public class NodeUtil {
             if ("*".equals(value)) {
                 value = "\"" + value + "\"";
             }
+            if (value != null && value.endsWith(";")) {
+                value = value.substring(0, value.length() - 1);
+            }
         }
 
         // copied it from Log4jFileUtil.javajet but need more comment for this script
@@ -956,9 +959,9 @@ public class NodeUtil {
         // fix is just transforming into true or false to make logging OK
         else if ("BUILDIN".equals(ep.getName())) {
             value = value.toLowerCase();
-        }else if(value.endsWith("*")){
-    		value=value.substring(0, value.length()-1)+"\"*\"";
-    	}
+        } else if (value.endsWith("*")) {
+            value = value.substring(0, value.length() - 1) + "\"*\"";
+        }
         return value;
     }
 
