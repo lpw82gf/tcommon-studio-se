@@ -398,8 +398,8 @@ public class RepositoryToComponentProperty {
             for (AdditionalConnectionProperty property : additionalProperties) {
                 Map<String, Object> map = new HashMap<String, Object>();
                 if (property.getPropertyName() != null && !"".equals(property.getPropertyName())) {
-                    map.put("PROPERTY", property.getPropertyName());//$NON-NLS-1$
-                    map.put("VALUE", property.getValue());//$NON-NLS-1$
+                    map.put("PROPERTY", TalendQuoteUtils.addQuotes(property.getPropertyName()));//$NON-NLS-1$
+                    map.put("VALUE", TalendQuoteUtils.addQuotes(property.getValue()));//$NON-NLS-1$                   
                     values.add(map);
                 }
             }
